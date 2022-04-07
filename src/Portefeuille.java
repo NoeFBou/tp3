@@ -39,12 +39,16 @@ public class Portefeuille {
    * @param montantEuros Valeur d'achat en euros 
    * @return true si le montant en euros est supérieur ou égal à 0 
    */
-  public boolean achatDevise (double montantEuros){
-	/**
-           FONCTION À IMPLEMENTER
-	**/
-    return false;
+  public boolean achatDevise (double montantEuros)
+  {
+    if ( montantEuros < 0) { return false; }
+    else
+    {
+        this.montant += (float) montantEuros / this.monnaie.getValeurDeJeton();
+        return true;
+    }
   }
+  
 
   /**
    * Valide si le proprietaire passé en parametre est celui
