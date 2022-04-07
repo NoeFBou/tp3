@@ -6,6 +6,7 @@ public class Cryptomonnaie{
         this.nom = nom;
         this.valeurDeJeton = valeurDeJeton;
     }
+    public nom getNom(){return this.nom; }
 
     public double getValeurDeJeton(){return this.valeurDeJeton;}
 }
