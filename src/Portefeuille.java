@@ -1,8 +1,8 @@
 public class Portefeuille {
-  private Cryptomonnaie monnaie;
-  private double montant; // Soit le nombre de jetons
-  private String proprietaire;
-
+    private Cryptomonnaie monnaie;
+    private double montant; // Soit le nombre de jetons
+    private String proprietaire;
+    
   public Portefeuille(Cryptomonnaie monnaie, double montant, String proprietaire){
       this.monnaie      = monnaie;
       this.montant      = montant;
@@ -18,11 +18,18 @@ public class Portefeuille {
    * @param montantJetons
    * @return Vrai si la transaction a été effectuée, faux sinon.  
    */
-  public boolean transfertDevise (Portefeuille destination, double montantJetons){
-      /**
-           FONCTION À IMPLEMENTER
-	  **/
-      return false;
+  public boolean transfertDevise (Portefeuille destination, double montantJetons)
+  {
+    if( this.montant < montantJetons || ! this.monnaie.equals(destination.getMonnaie()))
+    {
+        return false;
+    }
+    else
+    {
+        this.montant -= montantJetons;
+        destination.montant += montantJetons;
+        return true;
+    }
   }
 
   /**
